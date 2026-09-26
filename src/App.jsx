@@ -8,9 +8,13 @@ import NotFound from "./components/404/NotFound.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
 import PostDetail from "./components/postspage/PostDetail.jsx";
 
+import posts from './constants/data.json'
+import {useState} from "react";
 
 
 function App() {
+    const [postList, setPostList] = useState(posts) //state lifting -> newpost en post hebben de lijst nodig
+    console.log(postList);
     return (
         <>
 
@@ -21,7 +25,8 @@ function App() {
                    element={<Home />}
             />
             <Route path="/posts"
-                   element={<Posts />}
+                   element={<Posts postList={postList} />}
+
             />
             <Route path="/posts/:id"
                    element={<PostDetail />}

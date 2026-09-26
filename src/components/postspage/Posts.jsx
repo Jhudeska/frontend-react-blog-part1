@@ -2,7 +2,7 @@ import './Posts.css'
 import posts from '../../constants/data.json'
 import {Link} from "react-router-dom";
 
-function Posts() {
+function Posts({ postList }) {
     function formatDate(date) {
         return new Date(date).toLocaleDateString("nl-NL", {
             day: "numeric",
@@ -23,7 +23,7 @@ function Posts() {
 
             <section className="posts-grid">
 
-                {posts.map((post) => (
+                {postList.map((post) => (
                 <article key={post.id} className="post-card">
                 <span className="post-card-date">
                    {formatDate(post.created)}
