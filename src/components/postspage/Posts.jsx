@@ -19,7 +19,11 @@ function Posts() {
                 <article key={post.id} className="post-card">
                 <span className="post-card-date">
                     {/*21 september 2023*/}
-                    {post.created}
+                    {new Date(post.created).toLocaleDateString("nl-NL", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })}
                 </span>
 
                     <h2>{post.title}</h2>
