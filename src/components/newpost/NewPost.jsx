@@ -1,5 +1,6 @@
 import './NewPost.css';
 import { useState } from 'react'
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -11,6 +12,7 @@ function NewPost({ postList, setPostList }) {
     const [content, setContent] = useState('')
     // const [postList, setPostList] = useState(posts) // we hebben geen backend nog, dus slaan we het object in een usestate
 
+    const navigate = useNavigate()
 
     function handleSubmit(event) {
         // Normaal gesproken wanneer je in html  een form heb ingevuld wil je dat de pagina automatisch opnieuw wordt
@@ -29,7 +31,7 @@ function NewPost({ postList, setPostList }) {
         }
 
         setPostList([...postList, newPost])
-        // navigate('/posts')
+        navigate('/posts')
 
 
         console.log(newPost)
