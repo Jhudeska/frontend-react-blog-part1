@@ -16,10 +16,15 @@ function NewPost() {
         event.preventDefault()
 
 
-        console.log(title)
-        console.log(subtitle)
-        console.log(author)
-        console.log(content)
+        // een object maken van de blogpost details
+        const newPost = {
+            title: title,
+            subtitle: subtitle,
+            author: author,
+            content: content
+        }
+
+        console.log(newPost)
     }
 
 
@@ -34,6 +39,16 @@ function NewPost() {
                 </p>
             </section>
 
+
+            {/*formulier*/}
+            {/*↓*/}
+            {/*onSubmit*/}
+            {/*↓*/}
+            {/*handleSubmit()*/}
+            {/*↓*/}
+            {/*state uitlezen*/}
+            {/*↓*/}
+            {/*gegevens beschikbaar*/}
             <form onSubmit={handleSubmit} className="post-form">
 
                 <div className="form-group">
