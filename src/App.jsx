@@ -5,6 +5,7 @@ import Posts from "./components/postspage/Posts.jsx";
 import About from "./components/about/About.jsx";
 import NewPost from "./components/newpost/NewPost.jsx";
 import NotFound from "./components/404/NotFound.jsx";
+import Navbar from "./components/navbar/Navbar.jsx";
 
 
 
@@ -12,11 +13,7 @@ function App() {
     return (
         <>
 
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/posts">Posts</Link>
-            <Link to="/about">Over ons</Link>
-        </nav>
+       <Navbar />
 
         <Routes>
             <Route path="/"
