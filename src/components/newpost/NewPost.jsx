@@ -1,6 +1,16 @@
 import './NewPost.css';
+import { useState } from 'react'
+
 
 function NewPost() {
+
+    const [title, setTitle] = useState('')
+    const [subtitle, setSubtitle] = useState('')
+    const [author, setAuthor] = useState('')
+    const [content, setContent] = useState('')
+
+
+
     return (
         <main className="content-page">
 
@@ -24,7 +34,11 @@ function NewPost() {
                         id="title"
                         name="title"
                         placeholder="Titel van je blogpost"
+                        value={title}
+                        onChange={(event) => setTitle(event.target.value)}
                     />
+                    {/* <!-- testen of useState() werkt-->*/}
+                    {/*<p>{title}</p>*/}
                 </div>
 
                 <div className="form-group">
@@ -37,6 +51,8 @@ function NewPost() {
                         id="subtitle"
                         name="subtitle"
                         placeholder="Ondertitel"
+                        value={subtitle}
+                        onChange={(event) => setSubtitle(event.target.value)}
                     />
                 </div>
 
@@ -45,11 +61,20 @@ function NewPost() {
                         Auteur
                     </label>
 
+                    {/*{Stappenplan:*/}
+                    {/*{gebruiker type*/}
+                    {/*{on change*/}
+                    {/*{setAuthor()*/}
+                    {/*{onChange en setAuthor() wijzigt state}*/}
+                    {/*{author verandert}*/}
+
                     <input
                         type="text"
                         id="author"
                         name="author"
                         placeholder="Naam van de auteur"
+                        value={author}
+                        onChange={(event) => setAuthor(event.target.value)}
                     />
                 </div>
 
@@ -62,8 +87,11 @@ function NewPost() {
                         id="content"
                         name="content"
                         rows="10"
-                        placeholder="Schrijf je blogpost..."
+                        placeholder="Schijf je blogpost..."
+                        value={content}
+                        onChange={(event) => setContent(event.target.value)}
                     />
+
                 </div>
 
                 <button type="submit" className="button">

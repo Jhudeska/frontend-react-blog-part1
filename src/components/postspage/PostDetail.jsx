@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import posts from  '../constants/data.json';
+import posts from '../../constants/data.json';
 
 function PostDetail() {
     function formatDate(date) {

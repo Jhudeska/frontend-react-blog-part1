@@ -6,7 +6,7 @@ import About from "./components/about/About.jsx";
 import NewPost from "./components/newpost/NewPost.jsx";
 import NotFound from "./components/404/NotFound.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
-import PostDetail from "./components/PostDetail.jsx";
+import PostDetail from "./components/postspage/PostDetail.jsx";
 
 
 
