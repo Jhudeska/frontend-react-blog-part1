@@ -9,6 +9,7 @@ function NewPost() {
     const [subtitle, setSubtitle] = useState('')
     const [author, setAuthor] = useState('')
     const [content, setContent] = useState('')
+    const [postList, setPostList] = useState(posts) // we hebben geen backend nog, dus slaan we het object in een usestate
 
 
     function handleSubmit(event) {
@@ -25,6 +26,9 @@ function NewPost() {
             author: author,
             content: content
         }
+
+        setPostList([...postList, newPost])
+
 
         console.log(newPost)
     }
