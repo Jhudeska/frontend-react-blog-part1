@@ -3,7 +3,6 @@ import posts from '../../constants/data.json'
 import {Link} from "react-router-dom";
 
 function Posts() {
-
     function formatDate(date) {
         return new Date(date).toLocaleDateString("nl-NL", {
             day: "numeric",
