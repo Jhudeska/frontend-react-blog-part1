@@ -1,5 +1,6 @@
 import './NewPost.css';
 import { useState } from 'react'
+import posts from '../../constants/data.json';
 
 
 function NewPost() {
@@ -18,6 +19,7 @@ function NewPost() {
 
         // een object maken van de blogpost details
         const newPost = {
+            id: posts.length + 1,
             title: title,
             subtitle: subtitle,
             author: author,
