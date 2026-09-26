@@ -1,7 +1,16 @@
 import './Posts.css'
 import posts from '../../constants/data.json'
+import {Link} from "react-router-dom";
 
 function Posts() {
+
+    function formatDate(date) {
+        return new Date(date).toLocaleDateString("nl-NL", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        })
+    }
     console.log(posts);
     return (
         <main className="content-page">
@@ -18,12 +27,7 @@ function Posts() {
                 {posts.map((post) => (
                 <article key={post.id} className="post-card">
                 <span className="post-card-date">
-                    {/*21 september 2023*/}
-                    {new Date(post.created).toLocaleDateString("nl-NL", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                    })}
+                   {formatDate(post.created)}
                 </span>
 
                     <h2>{post.title}</h2>
@@ -36,9 +40,9 @@ function Posts() {
                         Door {post.author}
                     </p>
 
-                    <a href="/posts/1" className="button">
+                    <Link to={`/posts/${post.id}`} className="button">
                         Lees meer
-                    </a>
+                    </Link>
                 </article>
                 ))}
 
