@@ -1,6 +1,8 @@
 import './Posts.css'
+import posts from '../../constants/data.json'
 
 function Posts() {
+    console.log(posts);
     return (
         <div>
             <h1>Blogposts</h1>
