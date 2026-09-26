@@ -24,10 +24,12 @@ function NewPost({ postList, setPostList }) {
             title: title,
             subtitle: subtitle,
             author: author,
-            content: content
+            content: content,
+            created: new Date().toISOString()
         }
 
         setPostList([...postList, newPost])
+        // navigate('/posts')
 
 
         console.log(newPost)
