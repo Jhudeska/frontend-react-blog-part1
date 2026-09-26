@@ -11,7 +11,10 @@ function NewPost() {
 
 
     function handleSubmit(event) {
+        // Normaal gesproken wanneer je in html  een form heb ingevuld wil je dat de pagina automatisch opnieuw wordt
+        // geladen. Maar bij react wil je dat meestal niet en daarom geven hier door om het normale gedrag of flow te voorkomen
         event.preventDefault()
+
 
         console.log(title)
         console.log(subtitle)
