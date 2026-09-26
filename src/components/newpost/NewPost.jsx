@@ -10,6 +10,15 @@ function NewPost() {
     const [content, setContent] = useState('')
 
 
+    function handleSubmit(event) {
+        event.preventDefault()
+
+        console.log(title)
+        console.log(subtitle)
+        console.log(author)
+        console.log(content)
+    }
+
 
     return (
         <main className="content-page">
@@ -22,7 +31,7 @@ function NewPost() {
                 </p>
             </section>
 
-            <form className="post-form">
+            <form onSubmit={handleSubmit} className="post-form">
 
                 <div className="form-group">
                     <label htmlFor="title">
