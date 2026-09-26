@@ -6,6 +6,7 @@ import About from "./components/about/About.jsx";
 import NewPost from "./components/newpost/NewPost.jsx";
 import NotFound from "./components/404/NotFound.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
+import PostDetail from "./components/PostDetail.jsx";
 
 
 
@@ -21,6 +22,9 @@ function App() {
             />
             <Route path="/posts"
                    element={<Posts />}
+            />
+            <Route path="/posts/:id"
+                   element={<PostDetail />}
             />
             <Route path="/new"
                    element={<NewPost />}
