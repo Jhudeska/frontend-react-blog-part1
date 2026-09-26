@@ -1,5 +1,4 @@
 import './Posts.css'
-import posts from '../../constants/data.json'
 import {Link} from "react-router-dom";
 
 function Posts({ postList }) {
@@ -10,7 +9,7 @@ function Posts({ postList }) {
             year: "numeric"
         })
     }
-    console.log(posts);
+    console.log(postList);
     return (
         <main className="content-page">
             <section className="page-heading">

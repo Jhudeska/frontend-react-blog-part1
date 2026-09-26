@@ -1,15 +1,15 @@
 import './NewPost.css';
 import { useState } from 'react'
-import posts from '../../constants/data.json';
 
 
-function NewPost() {
+
+function NewPost({ postList, setPostList }) {
 
     const [title, setTitle] = useState('')
     const [subtitle, setSubtitle] = useState('')
     const [author, setAuthor] = useState('')
     const [content, setContent] = useState('')
-    const [postList, setPostList] = useState(posts) // we hebben geen backend nog, dus slaan we het object in een usestate
+    // const [postList, setPostList] = useState(posts) // we hebben geen backend nog, dus slaan we het object in een usestate
 
 
     function handleSubmit(event) {
@@ -20,7 +20,7 @@ function NewPost() {
 
         // een object maken van de blogpost details
         const newPost = {
-            id: posts.length + 1,
+            id: postList.length + 1,
             title: title,
             subtitle: subtitle,
             author: author,

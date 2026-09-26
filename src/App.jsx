@@ -25,14 +25,14 @@ function App() {
                    element={<Home />}
             />
             <Route path="/posts"
-                   element={<Posts postList={postList} />}
+                   element={<Posts postList={postList} />} // geeft json file door via statelift
 
             />
             <Route path="/posts/:id"
                    element={<PostDetail />}
             />
             <Route path="/new"
-                   element={<NewPost />}
+                   element={<NewPost postList={postList} setPostList={setPostList}/>}
             />
             <Route path="/about"
                    element={<About />}
