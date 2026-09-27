@@ -79,6 +79,7 @@ function NewPost({ postList, setPostList }) {
                         placeholder="Titel van je blogpost"
                         value={title}
                         onChange={(event) => setTitle(event.target.value)}
+                        required
                     />
                     {/* <!-- testen of useState() werkt-->*/}
                     {/*<p>{title}</p>*/}
@@ -96,6 +97,7 @@ function NewPost({ postList, setPostList }) {
                         placeholder="Ondertitel"
                         value={subtitle}
                         onChange={(event) => setSubtitle(event.target.value)}
+                        required
                     />
                 </div>
 
@@ -118,6 +120,7 @@ function NewPost({ postList, setPostList }) {
                         placeholder="Naam van de auteur"
                         value={author}
                         onChange={(event) => setAuthor(event.target.value)}
+                        required
                     />
                 </div>
 
@@ -130,9 +133,12 @@ function NewPost({ postList, setPostList }) {
                         id="content"
                         name="content"
                         rows="10"
+                        minLength={300}
+                        maxLength={2000}
                         placeholder="Schijf je blogpost..."
                         value={content}
                         onChange={(event) => setContent(event.target.value)}
+                        required
                     />
 
                 </div>
