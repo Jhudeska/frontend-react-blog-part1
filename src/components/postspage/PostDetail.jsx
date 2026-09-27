@@ -1,7 +1,6 @@
 import {useParams} from "react-router-dom";
-import posts from '../../constants/data.json';
 
-function PostDetail() {
+function PostDetail({ postList }) {
     function formatDate(date) {
         return new Date(date).toLocaleDateString("nl-NL", {
             day: "numeric",
@@ -11,7 +10,7 @@ function PostDetail() {
     }
     const { id } = useParams();
 
-    const post = posts.find((post) => post.id === Number(id));
+    const post = postList.find((post) => post.id === Number(id));
     if (!post) {
         return (
             <main className="content-page">

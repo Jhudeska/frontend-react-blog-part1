@@ -51,7 +51,7 @@ function App() {
 
             />
             <Route path="/posts/:id"
-                   element={<PostDetail />}
+                   element={<PostDetail postList={postList} />}
             />
             <Route path="/new"
                    element={<NewPost postList={postList} setPostList={setPostList}/>}
