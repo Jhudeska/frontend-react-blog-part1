@@ -13,8 +13,12 @@ import axios from "axios";
 
 function App() {
     const [postList, setPostList] = useState([]) //state lifting -> newpost en post hebben de lijst nodig
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
+
+        console.log("LOADING:", loading);
         async function fetchPosts() {
             try {
                 const response = await axios.get(
@@ -31,7 +35,9 @@ function App() {
                 console.log(response.data);
             } catch (error) {
                 console.error("API ERROR:" ,error);
-        }
+        }finally {
+                setLoading(false); // finally want dan wordt het altijd uitgevoerd
+            }
     } fetchPosts()
     }, []);
 
