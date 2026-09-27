@@ -14,3 +14,520 @@
 .page-container img {
     width: 500px;
 }
+
+{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #1f2937;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+.site-header {
+    width: 100%;
+    background-color: #111827;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: white;
+}
+
+/* =========================
+HOME
+========================= */
+
+.home-page {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: linear-gradient(
+            135deg,
+            #1f2937,
+            #374151
+    );
+
+
+}
+
+.hero {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.hero-logo {
+    width: 180px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+
+    font-size: 42px;
+
+
+}
+
+.hero p {
+    max-width: 550px;
+    margin: 0 auto 30px;
+
+    color: #6b7280;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+
+}
+
+/* =========================
+GENERAL BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+
+
+}
+
+.button:hover {
+    background-color: #1d4ed8;
+}
+
+/* =========================
+GENERAL PAGE
+========================= */
+
+.content-page {
+    width: 100%;
+    max-width: 1200px;
+
+    min-height: calc(100vh - 70px);
+
+    margin: 0 auto;
+
+    padding: 60px 30px;
+
+
+}
+
+.page-heading {
+    margin-bottom: 40px;
+}
+
+.page-heading h1 {
+    margin: 0 0 10px;
+
+    font-size: 40px;
+
+
+}
+
+.page-heading p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 18px;
+
+
+}
+
+/* =========================
+POSTS
+========================= */
+
+.posts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+
+}
+
+.post-card {
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.post-card h2 {
+    margin: 12px 0;
+
+    font-size: 24px;
+
+
+}
+
+.post-card p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+
+}
+
+.post-card-date {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+
+}
+
+.post-card-author {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* =========================
+POST DETAIL
+========================= */
+
+.post-detail {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 50px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.post-detail h1 {
+    margin: 15px 0;
+
+    font-size: 42px;
+
+
+}
+
+.post-detail-subtitle {
+    color: #6b7280;
+
+    font-size: 20px;
+
+
+}
+
+.post-detail-author {
+    margin: 25px 0;
+
+    font-weight: bold;
+
+
+}
+
+.post-detail-content {
+    margin-top: 30px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+
+}
+
+.post-meta {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+
+}
+
+/* =========================
+FORM
+========================= */
+
+.post-form {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 25px;
+
+
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about-page {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 50px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.about-page h1 {
+    margin-top: 0;
+
+    font-size: 40px;
+
+
+}
+
+.about-page p {
+    color: #4b5563;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+
+}
+
+/* =========================
+404
+========================= */
+
+.not-found {
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+
+}
+
+.not-found h1 {
+    margin: 0;
+
+    font-size: 120px;
+
+    color: #2563eb;
+
+
+}
+
+.not-found h2 {
+    font-size: 32px;
+}
+
+.not-found p {
+    margin-bottom: 30px;
+
+    color: #6b7280;
+
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .post-detail {
+        padding: 30px 20px;
+    }
+
+    .post-detail h1 {
+        font-size: 32px;
+    }
+
+
+}
