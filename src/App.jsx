@@ -7,11 +7,16 @@ import NewPost from "./components/newpost/NewPost.jsx";
 import NotFound from "./components/404/NotFound.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
 import PostDetail from "./components/postspage/PostDetail.jsx";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 
 function App() {
     const [postList, setPostList] = useState([]) //state lifting -> newpost en post hebben de lijst nodig
+
+    useEffect(() => {
+        console.log("App geladen");
+    }, []);
+
     console.log(postList);
     return (
         <>
