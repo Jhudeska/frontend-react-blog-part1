@@ -27,7 +27,9 @@ function NewPost({ postList, setPostList }) {
             subtitle: subtitle,
             author: author,
             content: content,
-            created: new Date().toISOString()
+            created: new Date().toISOString(),
+            comments: 0,
+            shares: 0
         }
 
         setPostList([...postList, newPost])
