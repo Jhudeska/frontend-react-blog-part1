@@ -19,6 +19,9 @@ function NewPost({ postList, setPostList }) {
         // geladen. Maar bij react wil je dat meestal niet en daarom geven hier door om het normale gedrag of flow te voorkomen
         event.preventDefault()
 
+        const wordCount = content.trim().split(/\s+/).length
+
+        const readTime = Math.ceil(wordCount / 100 * 0.3)
 
         // een object maken van de blogpost details
         const newPost = {
@@ -29,7 +32,8 @@ function NewPost({ postList, setPostList }) {
             content: content,
             created: new Date().toISOString(),
             comments: 0,
-            shares: 0
+            shares: 0,
+            readTime: readTime
         }
 
         setPostList([...postList, newPost])
