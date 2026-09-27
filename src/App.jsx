@@ -8,15 +8,34 @@ import NotFound from "./components/404/NotFound.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
 import PostDetail from "./components/postspage/PostDetail.jsx";
 import {useState, useEffect} from "react";
+import axios from "axios";
 
 
 function App() {
     const [postList, setPostList] = useState([]) //state lifting -> newpost en post hebben de lijst nodig
 
     useEffect(() => {
-        console.log("App geladen");
+        async function fetchPosts() {
+            try {
+                const response = await axios.get(
+                    `${import.meta.env.VITE_NOVI_API_URL}/api/blogposts`,
+                    {
+                        headers: {
+                            "novi-education-project-id": "c781fc07-bbf8-488e-aee9-456f6882e830"
+                        }
+                    }
+                );
+
+                setPostList(response.data);
+
+                console.log(response.data);
+            } catch (error) {
+                console.error("API ERROR:" ,error);
+        }
+    } fetchPosts()
     }, []);
 
+    // console.log(response.data)
     console.log(postList);
     return (
         <>
