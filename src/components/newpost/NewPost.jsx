@@ -140,6 +140,9 @@ function NewPost({ postList, setPostList }) {
                         onChange={(event) => setContent(event.target.value)}
                         required
                     />
+                    <p>
+                        {content.length} / 2000 tekens
+                    </p>
 
                 </div>
 
