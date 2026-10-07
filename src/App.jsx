@@ -14,6 +14,7 @@ import axios from "axios";
 function App() {
     const [postList, setPostList] = useState([]) //state lifting -> newpost en post hebben de lijst nodig
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
 
     useEffect(() => {
@@ -26,6 +27,8 @@ function App() {
                     {
                         headers: {
                             "novi-education-project-id": "c781fc07-bbf8-488e-aee9-456f6882e830"
+                            // c781fc07-bbf8-488e-aee9-456f6882e830
+                            // cd56eb7c-6b02-44a7-a65f-84eca6078c13
                         }
                     }
                 );
@@ -35,14 +38,17 @@ function App() {
                 console.log(response.data);
             } catch (error) {
                 console.error("API ERROR:" ,error);
+                setError("Het ophalen van de blogposts is mislukt.");
         }finally {
+                console.log("FINALLY WORDT UITGEVOERD");
                 setLoading(false); // finally want dan wordt het altijd uitgevoerd
             }
     } fetchPosts()
     }, []);
 
     // console.log(response.data)
-    console.log(postList);
+    console.log("LOADING:", loading);
+    console.log("POSTLIST:", postList);
     return (
         <>
 
@@ -53,11 +59,11 @@ function App() {
                    element={<Home />}
             />
             <Route path="/posts"
-                   element={<Posts postList={postList} />} // geeft json file door via statelift
+                   element={<Posts postList={postList} loading={loading} error={error} />} // geeft json file door via statelift
 
             />
             <Route path="/posts/:id"
-                   element={<PostDetail postList={postList} />}
+                   element={<PostDetail />}
             />
             <Route path="/new"
                    element={<NewPost postList={postList} setPostList={setPostList}/>}

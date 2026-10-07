@@ -1,7 +1,7 @@
 import './Posts.css'
 import {Link} from "react-router-dom";
 
-function Posts({ postList }) {
+function Posts({ postList, loading, error }) {
     function formatDate(date) {
         return new Date(date).toLocaleDateString("nl-NL", {
             day: "numeric",
@@ -22,27 +22,69 @@ function Posts({ postList }) {
 
             <section className="posts-grid">
 
-                {postList.map((post) => (
-                <article key={post.id} className="post-card">
+                {error ? (
+                        <p>{error}</p>
+                    )
+                    : loading ? (
+                    <p>Blogposts worden geladen...</p>
+                ) : (
+                    postList.map((post) => (
+                        <article key={post.id} className="post-card">
                 <span className="post-card-date">
-                   {formatDate(post.created)}
+                    {formatDate(post.created)}
                 </span>
 
-                    <h2>{post.title}</h2>
+                            <h2>{post.title}</h2>
 
-                    <p>
-                        {post.subtitle}
-                    </p>
+                            <p>
+                                {post.subtitle}
+                            </p>
 
-                    <p className="post-card-author">
-                        Door {post.author}
-                    </p>
+                            <p className="post-card-author">
+                                Door {post.author}
+                            </p>
 
-                    <Link to={`/posts/${post.id}`} className="button">
-                        Lees meer
-                    </Link>
-                </article>
-                ))}
+                            <Link
+                                to={`/posts/${post.id}`}
+                                className="button"
+                            >
+                                Lees meer
+                            </Link>
+                        </article>
+                    ))
+                )}
+
+                {/*{loading ? (*/}
+                {/*    <p>Blogposts worden geladen...</p>*/}
+                {/*) : (*/}
+                {/*    postList.map((post) => (*/}
+                {/*        <article key={post.id} className="post-card">*/}
+                {/*            ...*/}
+                {/*        </article>*/}
+                {/*    ))*/}
+                {/*)}*/}
+
+                {/*{postList.map((post) => (*/}
+                {/*<article key={post.id} className="post-card">*/}
+                {/*<span className="post-card-date">*/}
+                {/*   {formatDate(post.created)}*/}
+                {/*</span>*/}
+
+                {/*    <h2>{post.title}</h2>*/}
+
+                {/*    <p>*/}
+                {/*        {post.subtitle}*/}
+                {/*    </p>*/}
+
+                {/*    <p className="post-card-author">*/}
+                {/*        Door {post.author}*/}
+                {/*    </p>*/}
+
+                {/*    <Link to={`/posts/${post.id}`} className="button">*/}
+                {/*        Lees meer*/}
+                {/*    </Link>*/}
+                {/*</article>*/}
+                {/*))}*/}
 
                 {/*<article className="post-card">*/}
                 {/*<span className="post-card-date">*/}

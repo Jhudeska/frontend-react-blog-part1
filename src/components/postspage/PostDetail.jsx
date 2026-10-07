@@ -1,6 +1,38 @@
+import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
+import axios from "axios";
 
-function PostDetail({ postList }) {
+function PostDetail() {
+    const { id } = useParams();
+
+    const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        async function fetchPost() {
+            try {
+                const response = await axios.get(
+                    `${import.meta.env.VITE_NOVI_API_URL}/api/blogposts/${id}`,
+                    {
+                        headers: {
+                            "novi-education-project-id": "c781fc07-bbf8-488e-aee9-456f6882e830"
+                        }
+                    }
+                );
+
+                setPost(response.data);
+            } catch (error) {
+                console.error("API ERROR:", error);
+                setError("Het ophalen van de blogpost is mislukt.");
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchPost();
+    }, [id]);
+
     function formatDate(date) {
         return new Date(date).toLocaleDateString("nl-NL", {
             day: "numeric",
@@ -8,9 +40,23 @@ function PostDetail({ postList }) {
             year: "numeric"
         })
     }
-    const { id } = useParams();
 
-    const post = postList.find((post) => post.id === Number(id));
+    if (loading) {
+        return (
+            <main className="content-page">
+                <p>Blogpost wordt geladen...</p>
+            </main>
+        );
+    }
+
+    if (error) {
+        return (
+            <main className="content-page">
+                <p>{error}</p>
+            </main>
+        );
+    }
+
     if (!post) {
         return (
             <main className="content-page">
@@ -22,9 +68,30 @@ function PostDetail({ postList }) {
                     </p>
                 </div>
             </main>
-        )
+        );
     }
+
     console.log(post);
+
+    // const { id } = useParams();
+    //
+    // const post = postList.find((post) => post.id === Number(id));
+    // if (!post) {
+    //     return (
+    //         <main className="content-page">
+    //             <div className="not-found">
+    //                 <h1>404</h1>
+    //                 <h2>Blogpost niet gevonden</h2>
+    //                 <p>
+    //                     Deze blogpost bestaat helaas niet.
+    //                 </p>
+    //             </div>
+    //         </main>
+    //     )
+    // }
+    // console.log(post);
+
+
 
     return (
         <main className="content-page">
